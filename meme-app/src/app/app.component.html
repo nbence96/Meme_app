@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-button [routerLink]="[ '/splash' ]">Meme-app</a>
+    <button mat-button routerLink="/favorites">
+      Kedvencek
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

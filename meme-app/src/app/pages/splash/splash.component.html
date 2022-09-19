@@ -1,0 +1,16 @@
+<div fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="memes$ | async as memes">
+    <ng-container *ngIf="memes.data.memes.length > 0; else empty">  
+        <mat-card class ="mat-elevant-z4" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let meme of memes.data.memes">
+        <mat-card-title>{{ meme.name }}</mat-card-title>
+
+        <img mat-card-image class="imgs" [src]="meme.url" [alt]="meme.url"/>
+        
+        <mat-card-actions align="end">
+        <button mat-button (click)="addToFavorites(meme)">      
+            <mat-icon>favorite</mat-icon>
+        </button>
+        </mat-card-actions>
+        </mat-card>
+    </ng-container>
+</div>
+<ng-template #empty>Nincsenek memek, valami hiba történt. :(</ng-template>
